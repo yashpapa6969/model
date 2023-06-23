@@ -1,0 +1,15 @@
+service: model
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+
+functions:
+ api:
+    handler: handler.hello
+    events:
+      - httpApi: '*'
+plugins:
+  - serverless-python-requirements
+
